@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 21:29:31 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/31 14:28:05 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 14:30:07 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*conversion_s_S(va_list arg, t_arg *data)
 	if (data->type == 'S')
 	{
 		wtmp = va_arg(arg, wchar_t*);
-		wtmp = wstrstr();
+		str = wstrstr(wtmp);
 	}
 	else
 	{
