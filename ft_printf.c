@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 21:29:31 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/31 13:59:42 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 14:28:05 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,41 @@ void	makezero(t_arg *data)
 	data->type = 0;
 }
 
+char	*wstrstr(wchar_t *wstr)
+{
+	char	*str;
+	int		i;
+
+	i = 0;
+	while (wstr[i])
+	{
+		str[i] = (char)wstr[i];
+		i++;
+	}
+	return (str);
+}
+
 char	*conversion_s_S(va_list arg, t_arg *data)
 {
 	char	*str;
 	char	*tmp;
-	t_arg	*tmp_for_data;
+	wchar_t *wtmp;
 
-	tmp_for_data = data;
-	tmp = va_arg(arg, char *);
-	if (tmp == NULL)
-		str = ft_strdup("(null)");
+	if (!ft_strcmp(data->format, "l"))
+		data->type = 'S';
+	if (data->type == 'S')
+	{
+		wtmp = va_arg(arg, wchar_t*);
+		wtmp = wstrstr();
+	}
 	else
-		str = ft_strdup(tmp);
+	{
+		tmp = va_arg(arg, char *);
+		if (tmp == NULL)
+			str = ft_strdup("(null)");
+		else
+			str = ft_strdup(tmp);
+	}
 	return (str);
 }
 
