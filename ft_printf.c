@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 21:29:31 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/31 14:30:07 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 14:36:06 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,46 @@ void	makezero(t_arg *data)
 	data->type = 0;
 }
 
-char	*wstrstr(wchar_t *wstr)
-{
-	char	*str;
-	int		i;
+// char	*wstrstr(wchar_t *wstr)
+// {
+// 	char	*str;
+// 	int		i;
+//
+// 	i = 0;
+// 	str = NULL;
+// 	while (wstr[i])
+// 	{
+// 		str[i] = (char)wstr[i];
+// 		i++;
+// 	}
+// 	return (str);
+// }
 
+int		ft_wstrlen(wchar_t *str)
+{
+	int		len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+char	*ft_wstrdup(wchar_t *s1)
+{
+	int		i;
+	char	*s2;
+
+	s2 = (char *)malloc(sizeof(char) * (ft_wstrlen(s1) + 1));
+	if (s2 == NULL)
+		return (NULL);
 	i = 0;
-	while (wstr[i])
+	while (s1[i])
 	{
-		str[i] = (char)wstr[i];
-		i++;
+		s2[i] = (char)s1[i];
+		++i;
 	}
-	return (str);
+	return (s2);
 }
 
 char	*conversion_s_S(va_list arg, t_arg *data)
@@ -54,7 +82,7 @@ char	*conversion_s_S(va_list arg, t_arg *data)
 	if (data->type == 'S')
 	{
 		wtmp = va_arg(arg, wchar_t*);
-		str = wstrstr(wtmp);
+		str = ft_wstrdup(wtmp);
 	}
 	else
 	{
