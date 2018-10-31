@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 21:29:31 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/31 14:36:06 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 14:50:37 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,9 @@ char	*ft_wstrdup(wchar_t *s1)
 	while (s1[i])
 	{
 		s2[i] = (char)s1[i];
-		++i;
+		if (s1[i] > 127)
+			g_ohno++;
+		i++;
 	}
 	return (s2);
 }
@@ -107,6 +109,7 @@ char	*conversion_c_C(va_list arg, t_arg *data)
 	{
 		w_tmp = va_arg(arg, wint_t);
 		tmp = (char)w_tmp;
+		g_ohno++;
 	}
 	else
 		tmp = va_arg(arg, int);
@@ -640,6 +643,7 @@ int		ft_printf(const char *restrict format, ...)
 	int		number_of_char;
 	va_list	arg;
 
+	g_ohno = 0;
 	va_start(arg, format);
 	start_printf(arg, format);
 	number_of_char = ft_strlen(g_word);
@@ -648,5 +652,5 @@ int		ft_printf(const char *restrict format, ...)
 	va_end(arg);
 	ft_strdel(&g_word);
 	// printf("number_of_char: %d\n", number_of_char - 1);
-	return (number_of_char);
+	return (number_of_char + g_ohno);
 }

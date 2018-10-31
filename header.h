@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 18:30:21 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/30 22:19:11 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 14:49:25 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_arg
 }				t_arg;
 
 char	*g_word;
+int		g_ohno;
 
 int		ft_printf(const char *restrict format, ...);
 char	*ft_itoa_base_unsigned(uintmax_t value, int base);
