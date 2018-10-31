@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 15:39:28 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/31 16:52:25 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 16:55:30 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ char	*conversion_c_wc(va_list arg, t_arg *data)
 	}
 	else
 		tmp = va_arg(arg, int);
-	if (tmp > 127)
-		g_ohno++;
 	letter = ft_bchar(1, (char)tmp);
 	return (letter);
 }
