@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 21:29:31 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/31 14:57:36 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 15:01:18 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,28 @@ int		ft_wstrlen(wchar_t *str)
 	return (len);
 }
 
+int		idkwhy(wchar_t *str)
+{
+	int len;
+	int counter;
+
+	counter = 0;
+	len = 0;
+	while (str[len])
+	{
+		if (str[len] > 127)
+			counter++;
+		len++;
+	}
+	return (counter);
+}
+
 char	*ft_wstrdup(wchar_t *s1)
 {
 	int		i;
 	char	*s2;
 
-	s2 = (char *)malloc(sizeof(char) * (ft_wstrlen(s1) - 5));
+	s2 = (char *)malloc(sizeof(char) * (ft_wstrlen(s1) - idkwhy(s1)));
 	if (s2 == NULL)
 		return (NULL);
 	i = 0;
