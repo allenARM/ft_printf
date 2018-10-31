@@ -1,53 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_intmax.c                                   :+:      :+:    :+:   */
+/*   ft_itoa_base_unsigned.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 22:33:32 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/30 18:27:23 by amelikia         ###   ########.fr       */
+/*   Created: 2018/10/29 22:32:54 by amelikia          #+#    #+#             */
+/*   Updated: 2018/10/31 16:16:52 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
-static char		*itoa_filler(char *tab, long long value, int flag)
+static char	*itoa_filler(char *tab, uintmax_t value, int base)
 {
-	long long	tmp;
-	int			size;
-	char		*str;
+	uintmax_t			tmp;
+	int					size;
+	char				*str;
 
 	size = 0;
-	tmp = ft_abs(value);
-	while (tmp /= 10)
+	tmp = value;
+	while (tmp /= base)
 		size++;
-	size = size + flag + 1;
+	size = size + 1;
 	str = (char *)malloc(sizeof(char) * size + 1);
-	if (str == NULL)
-		return (NULL);
 	str[size] = '\0';
-	if (flag == 1)
-		str[0] = '-';
-	while (size > flag)
+	while (size > 0)
 	{
-		str[size - 1] = tab[ft_abs(value % 10)];
+		str[size - 1] = tab[value % base];
 		size--;
-		value = value / 10;
+		value = value / base;
 	}
 	return (str);
 }
 
-char			*ft_itoa_intmax(long long value)
+char		*ft_itoa_base_unsigned(uintmax_t value, int base)
 {
-	char		*str;
-	char		*tab;
-	int			flag;
+	char				*str;
+	char				*tab;
 
-	flag = 0;
 	tab = "0123456789abcdef";
-	if (value < 0)
-		flag = 1;
-	str = itoa_filler(tab, value, flag);
+	str = itoa_filler(tab, value, base);
 	return (str);
 }
