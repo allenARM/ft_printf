@@ -6,7 +6,7 @@
 /*   By: amelikia <amelikia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/31 15:39:28 by amelikia          #+#    #+#             */
-/*   Updated: 2018/10/31 17:35:08 by amelikia         ###   ########.fr       */
+/*   Updated: 2018/10/31 17:38:04 by amelikia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*conversion_c_wc(va_list arg, t_arg *data)
 {
 	wchar_t w_tmp;
 	char	*letter;
-	int		tmp;
+	char		tmp;
 
 	if (!ft_strcmp(data->format, "l"))
 		data->type = 'C';
@@ -51,7 +51,7 @@ char	*conversion_c_wc(va_list arg, t_arg *data)
 		g_ohno++;
 	}
 	else
-		// tmp = va_arg(arg, int);
-	letter = ft_bchar(1, (char)va_arg(arg, int));
+		tmp = va_arg(arg, int);
+	letter = ft_bchar(1, (char)tmp);
 	return (letter);
 }
