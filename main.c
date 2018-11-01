@@ -2,17 +2,35 @@
 #include <stdio.h>
 #include <wchar.h>
 #include <locale.h>
-int main()
-{
-	// int c = 3;
-	// int b = -3;
-	// wchar_t wide[4] = {0x01A9};
-	// setlocale(LC_ALL, "");
-	// wchar_t newstring[7] = {0x43, 0x01A9, 0x43, 0x01A9, 0x01A9, 0x01A9, 0};
-	printf("NUM:%d\n", ft_printf("Hello %b terter\n", 127));
-	printf("\n--reg_printf--\n");
-	// printf("\neh: %d\n", printf("Hello %b terter\n", 127));
-	printf("\n--reg_printf--\n");
+#include <limits.h>
+
+// int main()
+// {
+// 	// int c = 3;
+// 	// int b = -3;
+// 	// wchar_t wide[4] = {0x01A9};
+// 	// setlocale(LC_ALL, "");
+// 	// wchar_t newstring[7] = {0x43, 0x01A9, 0x43, 0x01A9, 0x01A9, 0x01A9, 0};
+// 	printf("\nNUM:%d\n", ft_printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", \
+// 	 ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',
+// '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',
+// '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+// 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+// 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',
+// 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+// 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}'));
+// 	printf("\n--reg_printf--\n");
+// 	printf("\neh: %d\n", printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", \
+// 	 ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',
+// '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',
+// '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+// 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+// 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',
+// 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+// 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}'));
+// 	printf("\n--reg_printf--\n");
+//
+
 
 
 
@@ -126,5 +144,5 @@ int main()
 
 	// ft_printf("Hello %d terter\n", counter);
 	// printf("Hello %d terter\n", coimu);
-	return 0;
-}
+// 	return 0;
+// }
