@@ -48,7 +48,7 @@ all: $(NAME)
 
 $(NAME):
 	make -C libft
-	gcc $(FLAGS) $(INCLUDES) -c $(SRCS)
+	gcc $(FLAGS) -fsanitize=address $(INCLUDES) -c $(SRCS)
 	ar rc $(NAME) $(OFILES) ./libft/*.o
 	ranlib $(NAME)
 
